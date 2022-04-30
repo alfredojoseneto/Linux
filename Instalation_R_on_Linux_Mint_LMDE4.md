@@ -6,7 +6,12 @@
 2. Adicione a chave por meio do seguinte código
 
 ```
+# Debian Buster
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E19F5F87128899B192B1A2C2AD5F960A256A04AF
+
+
+# Debian Bullseye
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7
 
 ```
 3. Adicione o endereço do arquivo .deb no *source.list*
