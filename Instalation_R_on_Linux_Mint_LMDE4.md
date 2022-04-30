@@ -12,9 +12,13 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E19F5F87128899
 3. Adicione o endereço do arquivo .deb no *source.list*
 
 ```
+# Esta vesão é para o Debian Buster
 sudo echo "deb http://cloud.r-project.org/bin/linux/debian buster-cran40/" | sudo tee -a /etc/apt/sources.list
-sudo apt update
 
+# Esta versão é para o Debian Bullseye
+sudo echo "deb http://cloud.r-project.org/bin/linux/debian buster-bullseye40/" | sudo tee -a /etc/apt/sources.list
+
+sudo apt update
 ```
 4. Caso já tenha instalado o *r-base* e o *r-base-dev* é necessário removê-los
 
@@ -41,4 +45,4 @@ sudo apt install libgit2-dev libssh2-1-dev
 ```
 
 
-Estas informações estão disponíveis [aqui](https://cran.r-project.org/bin/linux/debian/#general-information)
+Estas informações estão disponíveis [aqui](https://cran.r-project.org/bin/linux/debian/)
