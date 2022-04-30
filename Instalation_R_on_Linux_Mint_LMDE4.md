@@ -16,7 +16,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E19F5F87128899
 sudo echo "deb http://cloud.r-project.org/bin/linux/debian buster-cran40/" | sudo tee -a /etc/apt/sources.list
 
 # Esta versão é para o Debian Bullseye
-sudo echo "deb http://cloud.r-project.org/bin/linux/debian buster-bullseye40/" | sudo tee -a /etc/apt/sources.list
+sudo echo "deb http://cloud.r-project.org/bin/linux/debian bullseye-cran40/" | sudo tee -a /etc/apt/sources.list
 
 sudo apt update
 ```
