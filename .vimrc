@@ -33,8 +33,7 @@ set number
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
 
-" Highlight cursor line underneath the cursor vertically and text over 80
-" chars
+" Highlight cursor line underneath the cursor vertically and text over 80 chars
 highlight ColorColumn ctermbg=darkgray
 set colorcolumn=80
 highlight OverLength ctermbg=darkgrey ctermfg=white guibg=#592929
