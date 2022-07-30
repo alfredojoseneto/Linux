@@ -69,6 +69,7 @@ set smartcase
 
 " Show partial command you type in the last line of the screen.
 set showcmd
+set cmdheight=1
 
 " Show the mode you are on the last line.
 set showmode
