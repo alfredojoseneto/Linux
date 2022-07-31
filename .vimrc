@@ -12,6 +12,10 @@
 "-------------------- INITAL_CONFIGURARIONS ------------------------------------
 "$ vim --version -> verify if the "+xterm_clipboard" is enable. Case not,
 "install "vim-gui-common" --> $ sudo apt install vim-gui-common
+"
+"
+"-------------------- PLUGIN_MANAGER -------------------------------------------
+"$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "-------------------------------------------------------------------------------
 
 " Do not save backup files.
@@ -38,7 +42,7 @@ filetype on
 
 "Set cursor is able to move from end of line to next line
 set whichwrap=b,s,<,>,[,]
-"
+
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
 
@@ -60,9 +64,12 @@ set cursorline
 " Hides the current buffer when a new file is openned
 set hidden
 
+" Do not wrap lines. Allow long lines to extend as far as the line goes.
+set nowrap
+
 " Highlight cursor line underneath the cursor vertically and text over 80 chars
-highlight ColorColumn ctermbg=darkgray
 set colorcolumn=81
+highlight ColorColumn ctermbg=darkgray
 highlight OverLength ctermbg=darkgrey ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
@@ -70,7 +77,7 @@ match OverLength /\%81v.\+/
 set shiftwidth=4
 
 " Set the ruler to show the point in the text in the cmd
-set ruler
+"set ruler
 
 " Set tab width to 4 columns.
 set tabstop=4
@@ -85,9 +92,6 @@ set listchars=tab:¦·,trail:·,nbsp:␣,eol:↲,precedes:❮,extends:❯
 
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
-
-" Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
 
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
@@ -127,6 +131,40 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " Copy to the clipboard
 set clipboard=unnamed
+
+
+"===============================================================================
+"-------------------- PLUGGINS -------------------------------------------------
+"===============================================================================
+
+call plug#begin()
+    Plug 'sainnhe/sonokai'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'rakr/vim-one'                  " vim-one color theme
+call plug#end()
+"-------------------------------------------------------------------------------
+
+"===============================================================================
+"-------------------- COLOR_SCHEME ---------------------------------------------
+"===============================================================================w
+let g:sonokai_style = 'andromeda'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 0
+let g:sonokai_diagnostic_line_highlight = 1
+let g:sonokai_current_word = 'bold'
+colorscheme sonokai
+"colorscheme one
+"set background=dark " for the dark version
+" set background=light " for the light version
+"let g:airline_theme='one'
+
+if (has("termguicolors"))
+    set termguicolors
+endif
+"===============================================================================
+"-------------------- MAPPING_KEYS ---------------------------------------------
+"===============================================================================
 
 " Set the backslash as the leader key
 let mapleader = '\'
