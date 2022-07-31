@@ -76,6 +76,7 @@ match OverLength /\%81v.\+/
 " Set shift width to 4 spaces.
 set shiftwidth=4
 
+
 " Set the ruler to show the point in the text in the cmd
 "set ruler
 
@@ -87,6 +88,7 @@ set expandtab
 
 " Set list of chars and what chars to display
 set list
+
 "set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set listchars=tab:¦·,trail:·,nbsp:␣,eol:↲,precedes:❮,extends:❯
 
@@ -132,7 +134,8 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Copy to the clipboard
 set clipboard=unnamed
 
-
+" The encoding should be utf-8 to activate the font icons
+set encoding=utf-8
 "===============================================================================
 "-------------------- PLUGGINS -------------------------------------------------
 "===============================================================================
@@ -147,21 +150,25 @@ call plug#end()
 
 "===============================================================================
 "-------------------- COLOR_SCHEME ---------------------------------------------
-"===============================================================================w
+"===============================================================================
 let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 0
 let g:sonokai_diagnostic_line_highlight = 1
 let g:sonokai_current_word = 'bold'
+let g:sonokai_transparent_background = 0
 colorscheme sonokai
-"colorscheme one
+" colorscheme one
 "set background=dark " for the dark version
 " set background=light " for the light version
 "let g:airline_theme='one'
 
-if (has("termguicolors"))
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
+
 "===============================================================================
 "-------------------- MAPPING_KEYS ---------------------------------------------
 "===============================================================================
