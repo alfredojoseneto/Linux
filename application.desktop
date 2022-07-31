@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Evernote
+Comment=Evernote
+Icon=/home/nome_usuario/.local/opt/Evernote/evernote_icon.png
+Exec=/home/nome_usuario/.local/opt/Evernote/evernote
+Terminal=false
+Categories=Evernote;Office
