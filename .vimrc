@@ -15,6 +15,9 @@
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
+" Setting Mouse Support
+set mouse=a
+
 " Enable type file detection. Vim will be able to try to detect the type of file is use.
 filetype on
 
@@ -35,7 +38,7 @@ set cursorline
 
 " Highlight cursor line underneath the cursor vertically and text over 80 chars
 highlight ColorColumn ctermbg=darkgray
-set colorcolumn=80
+set colorcolumn=81
 highlight OverLength ctermbg=darkgrey ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
