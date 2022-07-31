@@ -1,22 +1,23 @@
 "===============================================================================
-"               
+"
 "               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
 "               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
 "               ██║   ██║██║██╔████╔██║██████╔╝██║     
 "               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
 "                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
 "                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
-"               
+"
 "===============================================================================
 
 "-------------------- INITAL_CONFIGURARIONS ------------------------------------
 "$ vim --version -> verify if the "+xterm_clipboard" is enable. Case not,
 "install "vim-gui-common" --> $ sudo apt install vim-gui-common
 "
-"
 "-------------------- PLUGIN_MANAGER -------------------------------------------
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "-------------------------------------------------------------------------------
+"===============================================================================
+
 
 " Do not save backup files.
 set nobackup
@@ -197,17 +198,17 @@ nnoremap Y y$
 
 " You can split the window in Vim by typing :split or :vsplit
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+nnoremap <C-j> <c-w>j
+nnoremap <C-k> <c-w>k
+nnoremap <C-h> <c-w>h
+nnoremap <C-l> <c-w>l
 
 " Resize split windows using arrow keys by pressing:
 " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
-noremap <c-up> <c-w>+
-noremap <c-down> <c-w>-
-noremap <c-left> <c-w>>
-noremap <c-right> <c-w><
+noremap <C-up> <c-w>+
+noremap <C-down> <c-w>-
+noremap <C-left> <c-w>>
+noremap <C-right> <c-w><
 
 " Copy to and from clipboad
 noremap <leader>c "+y
