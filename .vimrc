@@ -18,7 +18,7 @@
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "-------------------------------------------------------------------------------
 
-" Do not save backup files.
+" Do not save backup files. 
 set nobackup
 set nowritebackup
 
@@ -40,8 +40,11 @@ set mouse=a
 " Enable type file detection. Vim will be able to try to detect the type of file is use.
 filetype on
 
+" Do not wrap lines. Allow long lines to extend as far as the line goes.
+set nowrap
+
 "Set cursor is able to move from end of line to next line
-set whichwrap=b,s,<,>,[,]
+set whichwrap+=b,s,<,>,[,]
 
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
@@ -64,9 +67,6 @@ set cursorline
 " Hides the current buffer when a new file is openned
 set hidden
 
-" Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
-
 " Highlight cursor line underneath the cursor vertically and text over 80 chars
 set colorcolumn=81
 highlight ColorColumn ctermbg=darkgray
@@ -76,12 +76,11 @@ match OverLength /\%81v.\+/
 " Set shift width to 4 spaces.
 set shiftwidth=4
 
-
-" Set the ruler to show the point in the text in the cmd
-"set ruler
-
 " Set tab width to 4 columns.
 set tabstop=4
+"
+" Set the ruler to show the point in the text in the cmd
+set ruler
 
 " Use space characters instead of tabs.
 set expandtab
@@ -136,6 +135,8 @@ set clipboard=unnamed
 
 " The encoding should be utf-8 to activate the font icons
 set encoding=utf-8
+
+
 "===============================================================================
 "-------------------- PLUGGINS -------------------------------------------------
 "===============================================================================
@@ -158,10 +159,6 @@ let g:sonokai_diagnostic_line_highlight = 1
 let g:sonokai_current_word = 'bold'
 let g:sonokai_transparent_background = 0
 colorscheme sonokai
-" colorscheme one
-"set background=dark " for the dark version
-" set background=light " for the light version
-"let g:airline_theme='one'
 
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
