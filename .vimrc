@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""     
+"===============================================================================
 "               
 "               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
 "               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
@@ -7,10 +7,25 @@
 "                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
 "                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 "               
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""   
-"==================== INITIAL_CONFIGURATIONS =============================
+"===============================================================================
+
+"-------------------- INITAL_CONFIGURARIONS ------------------------------------
 "$ vim --version -> verify if the "+xterm_clipboard" is enable. Case not,
 "install "vim-gui-common" --> $ sudo apt install vim-gui-common
+"-------------------------------------------------------------------------------
+
+" Do not save backup files.
+set nobackup
+set nowritebackup
+
+" Create the vertical splits to the right
+set splitright
+
+" Create the horizontal splits below
+set splitbelow
+
+" Update vim after file update from outside
+set autoread
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
@@ -21,6 +36,9 @@ set mouse=a
 " Enable type file detection. Vim will be able to try to detect the type of file is use.
 filetype on
 
+"Set cursor is able to move from end of line to next line
+set whichwrap=b,s,<,>,[,]
+"
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
 
@@ -33,8 +51,14 @@ syntax on
 " Add numbers to the file.
 set number
 
+" Enable relative line number
+set relativenumber
+
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
+
+" Hides the current buffer when a new file is openned
+set hidden
 
 " Highlight cursor line underneath the cursor vertically and text over 80 chars
 highlight ColorColumn ctermbg=darkgray
@@ -45,14 +69,19 @@ match OverLength /\%81v.\+/
 " Set shift width to 4 spaces.
 set shiftwidth=4
 
+" Set the ruler to show the point in the text in the cmd
+set ruler
+
 " Set tab width to 4 columns.
 set tabstop=4
 
 " Use space characters instead of tabs.
 set expandtab
 
-" Do not save backup files.
-set nobackup
+" Set list of chars and what chars to display
+set list
+"set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set listchars=tab:¦·,trail:·,nbsp:␣,eol:↲,precedes:❮,extends:❯
 
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
@@ -72,7 +101,7 @@ set smartcase
 
 " Show partial command you type in the last line of the screen.
 set showcmd
-set cmdheight=1
+set cmdheight=2
 
 " Show the mode you are on the last line.
 set showmode
@@ -99,26 +128,24 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Copy to the clipboard
 set clipboard=unnamed
 
-" MAPPING ==============================================================
-
-" Set the backslash as the leader key.
+" Set the backslash as the leader key
 let mapleader = '\'
 
-" Type jk to exit insert mode quickly.
+" Type jk to exit insert mode quickly
 inoremap jk <Esc>
 
-" Type jk to exit insert mode quickly.
+" Type jk to exit insert mode quickly
 nnoremap <leader>h :noh<CR>
 
-" Center the cursor vertically when moving to the next word during a search.
+" Center the cursor vertically when moving to the next word during a search
 nnoremap n nzz
 nnoremap N Nzz
 
 " Yank from cursor to the end of line.
 nnoremap Y y$
 
-" You can split the window in Vim by typing :split or :vsplit.
-" Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
+" You can split the window in Vim by typing :split or :vsplit
+" Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -134,3 +161,16 @@ noremap <c-right> <c-w><
 " Copy to and from clipboad
 noremap <leader>c "+y
 noremap <leader>v "+p
+
+" Walking around wrapped words
+nnoremap k gk
+nnoremap j gj
+
+" Showing Buffers
+nnoremap <leader>b :ls<CR>:buffer<Space>
+
+" Mapping some characters to edit files
+inoremap <F12> <Esc>20A=<Esc>A
+inoremap <S-F12> <Esc>80A=<Esc>81<Bar>v$hx
+inoremap <C-F12> <Esc>20A-<Esc>A
+inoremap <C-S-F12> <Esc>80A-<Esc>81<Bar>v$hx
