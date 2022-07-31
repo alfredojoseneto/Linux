@@ -18,11 +18,11 @@
 "$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "-------------------------------------------------------------------------------
 
-" Do not save backup files. 
+" Do not save backup files.
 set nobackup
 set nowritebackup
 
-" Create the vertical splits to the right
+" Create the vertical splits to the right 
 set splitright
 
 " Create the horizontal splits below
@@ -44,7 +44,10 @@ filetype on
 set nowrap
 
 "Set cursor is able to move from end of line to next line
-set whichwrap+=b,s,<,>,[,]
+set whichwrap+=h,l,b,s,<,>,[,]
+
+" Setting the behavior of the backspace
+set backspace=indent,eol,start
 
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
@@ -76,14 +79,20 @@ match OverLength /\%81v.\+/
 " Set shift width to 4 spaces.
 set shiftwidth=4
 
+" Setting smarttab to inserts blanks according to 'shiftwidth'
+set smarttab
+
 " Set tab width to 4 columns.
 set tabstop=4
-"
-" Set the ruler to show the point in the text in the cmd
-set ruler
 
 " Use space characters instead of tabs.
 set expandtab
+
+" Set the ruler to show the point in the text in the cmd
+set ruler
+
+" Setting the smart indentation
+set smartindent
 
 " Set list of chars and what chars to display
 set list
@@ -216,3 +225,4 @@ inoremap <F12> <Esc>20A=<Esc>A
 inoremap <S-F12> <Esc>80A=<Esc>81<Bar>v$hx
 inoremap <C-F12> <Esc>20A-<Esc>A
 inoremap <C-S-F12> <Esc>80A-<Esc>81<Bar>v$hx
+
