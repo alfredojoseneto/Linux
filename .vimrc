@@ -38,7 +38,7 @@ set nocompatible
 " Setting Mouse Support
 set mouse=a
 
-" Enable type file detection. Vim will be able to try to detect the type of file is use.
+" Enable type file detection. Vim will be able to try to detect the type of file is use. 
 filetype on
 
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
@@ -46,6 +46,12 @@ set nowrap
 
 "Set cursor is able to move from end of line to next line
 set whichwrap+=h,l,b,s,<,>,[,]
+
+" Set the margin to 10000 to previne wrap
+set wrapmargin=10000
+
+" Set the text width of 10000 o previne wrap
+set textwidth=10000
 
 " Setting the behavior of the backspace
 set backspace=indent,eol,start
@@ -155,8 +161,10 @@ call plug#begin()
     Plug 'sainnhe/sonokai'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'rakr/vim-one'                  " vim-one color theme
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
 call plug#end()
+
 "-------------------------------------------------------------------------------
 
 "===============================================================================
@@ -226,4 +234,3 @@ inoremap <F12> <Esc>20A=<Esc>A
 inoremap <S-F12> <Esc>80A=<Esc>81<Bar>v$hx
 inoremap <C-F12> <Esc>20A-<Esc>A
 inoremap <C-S-F12> <Esc>80A-<Esc>81<Bar>v$hx
-
